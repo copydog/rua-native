@@ -8,8 +8,8 @@
   "private": false,
   "scripts": {
     "web": "roadhog dev",
-    "ios": "",
-    "android": ""
+    "ios": "react-native run-ios",
+    "android": "react-native run-android"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
@@ -17,7 +17,7 @@
     "react-art": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-native-web": "^0.8.6",
-    "react-navigation": "^2.5.5",
+    "react-navigation": "2.2.0",
     "rua": "^0.12.0"
   },
   "devDependencies": {
