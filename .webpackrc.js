@@ -1,8 +1,11 @@
 const theme = require('./web/theme')
-require('./scripts/fix/index')
+// require('./scripts/fix/index')
 
 module.exports = {
   entry: 'ts/index.tsx',
+  define: {
+    __DEV__: process.env.NODE_DEV,
+  },
   alias: {
     'react-native': 'react-native-web'
   },
