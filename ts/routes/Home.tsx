@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { default as R } from '../resources'
 
 class Home extends React.Component<any, any>
 {
   static navigationOptions = {
-    // ...R.style.header,
-    headerTitle: 'Home',
+    ...R.style.header,
+    headerTitle: 'Rua.JS',
   }
 
   render()
