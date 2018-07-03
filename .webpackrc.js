@@ -13,17 +13,20 @@ module.exports = {
     __DEV__: process.env.NODE_DEV,
   },
   alias: {
-    'react-native': 'react-native-web'
+    'react-native$': 'react-native-web',
   },
   extraBabelPlugins: [
     '@babel/transform-flow-strip-types',
-    // 'react-native-web'
+    'react-native-web',
+    ['import', { 'libraryName': 'antd-mobile', 'style': true }],
   ],
   extraBabelPresets: [
     '@babel/preset-env',
     '@babel/preset-flow',
+    'react-native',
   ],
   extraBabelIncludes: [
+    'node_modules/dva',
     'node_modules/react-navigation',
     'node_modules/react-navigation-tabs',
     'node_modules/react-native-safe-area-view',
@@ -35,5 +38,12 @@ module.exports = {
   hash: true,
   html: {
     template: 'web/index.ejs',
+  },
+  proxy: {
+    '/mock': {
+      target: 'http://192.168.0.107:18010/',
+      changeOrigin: true,
+      pathRewrite: { '^/mock': '' },
+    },
   },
 }
