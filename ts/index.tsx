@@ -1,16 +1,18 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
+import './rua-native/loader'
 import {
   createBottomTabNavigator,
   createStackNavigator
 } from 'react-navigation'
 
-import { Home, Manual } from './routes'
+import { Home, Manual, Icons } from './routes'
 import { SimplePageExample } from './routes/Example'
 
 const Main = createBottomTabNavigator({
   Home: { screen: Home, path: '/' },
   Manual: { screen: Manual, path: '/manual' },
+  Icon: { screen: Icons, path: '/icon' },
 })
 
 Main.navigationOptions = ({ navigation }) =>
@@ -29,6 +31,6 @@ const App = createStackNavigator({
 })
 
 ReactDom.render(
-  <App />,
+  <App uriPrefix={'http://localhost:8000/'} />,
   document.getElementById('RuaNative')
 )

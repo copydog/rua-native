@@ -8,9 +8,12 @@ class Manual extends React.Component<any, any>
   static navigationOptions = {
     ...R.style.header,
     headerTitle: 'Manual',
-    tabBarIcon: ({ focused, tintColor }) => (
-      <Icon name={'account-box'} size={22} color={focused ? tintColor : '#333'} />
-    )
+    tabBarIcon({ focused, tintColor })
+    {
+      return (
+        <Icon name={'library-books'} size={22} color={focused ? tintColor : '#333'} />
+      )
+    }
   }
 
   render()
