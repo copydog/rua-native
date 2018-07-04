@@ -14,6 +14,7 @@ module.exports = {
   },
   alias: {
     'react-native$': 'react-native-web',
+    'antd-mobile-rn': 'antd-mobile',
   },
   extraBabelPlugins: [
     '@babel/transform-flow-strip-types',
