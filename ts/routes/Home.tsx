@@ -9,8 +9,9 @@ class Home extends React.Component<any, any>
     ...R.style.header,
     headerTitle: 'Rua.JS',
     tabBarLabel: 'Home',
-    tabBarIcon({ focused, tintColor })
+    tabBarIcon(nav: any)
     {
+      const { focused, tintColor } = nav
       return (
         <Icon name={'react'} size={22} color={focused ? tintColor : '#333'} />
       )
@@ -21,7 +22,7 @@ class Home extends React.Component<any, any>
   {
     return (
       <View style={styles.container}>
-        <ScrollView style={{ flex: 1 }} showsHorizontalScrollIndicator={false}>
+        <ScrollView style={{ flex: 1 }}>
           <View style={{ flex: 1, backgroundColor: 'red' }}>
             <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
             <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>

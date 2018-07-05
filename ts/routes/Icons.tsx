@@ -1,7 +1,7 @@
-import { List } from 'antd-mobile'
+import { List, Tabs } from 'antd-mobile-rn'
 import * as React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import { Icon as RIcon } from 'rua-ui'
+import { FlatList, ScrollView, StyleSheet } from 'react-native'
+import { Icon as RIcon, Space, Text, View, } from 'rua-ui'
 import { default as R } from '../resources'
 import { MaterialCommunityIcons } from '../rua-native/icon-list'
 
@@ -21,8 +21,9 @@ class Icons extends React.Component<any, any>
     ...R.style.header,
     headerTitle: 'Icons',
     tabBarLabel: 'Icons',
-    tabBarIcon({ focused, tintColor })
+    tabBarIcon(nav: any)
     {
+      const { focused, tintColor } = nav
       return (
         <RIcon name={'label'} size={22} color={focused ? tintColor : '#333'} />
       )
@@ -79,9 +80,19 @@ class Icons extends React.Component<any, any>
   {
     return (
       <View style={styles.f1}>
+        <Space />
         <View>
-          <Text>123</Text>
+          <ScrollView
+            horizontal={true}
+            style={styles.fontSelections}
+            showsHorizontalScrollIndicator={false}
+          >
+            <View style={styles.fontSelection}>
+              <Text>Material</Text>
+            </View>
+          </ScrollView>
         </View>
+        <Space />
         <FlatList
           style={styles.f1}
           data={this.data}
@@ -98,7 +109,13 @@ class Icons extends React.Component<any, any>
 const styles = StyleSheet.create({
   f1: {
     flex: 1,
-  }
+  },
+  fontSelections: {
+    backgroundColor: 'white',
+  },
+  fontSelection: {
+    width: 100,
+  },
 })
 
 export default Icons

@@ -1,3 +1,5 @@
 export { default as Home } from './Home'
 export { default as Manual } from './Manual'
 export { default as Icons } from './Icons'
+export { default as Playground } from './Playground'
+export { default as UI } from './UI'
