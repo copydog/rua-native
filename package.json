@@ -1,5 +1,5 @@
 {
-  "name": "rua-native",
+  "name": "RuaNative",
   "version": "0.0.1",
   "main": "index.js",
   "repository": "git@github.com:copydog/rua-native.git",
@@ -7,15 +7,20 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "init:rn": "react-native upgrade",
+    "link:package": "react-native link",
+    "start": "cross-env node_modules/react-native/local-cli/cli.js start",
     "web": "roadhog dev",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "fix:web": "node ./scripts/fix/index"
   },
   "dependencies": {
+    "antd-mobile-rn": "^2.2.0",
     "react": "^16.4.1",
     "react-art": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-native": "^0.55.4",
     "react-native-vector-icons": "^4.6.0",
     "react-native-web": "^0.8.6",
     "react-navigation": "2.2.0",
