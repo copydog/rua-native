@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { BackHandler } from 'react-native'
+import { BackHandler, Animated, Easing } from 'react-native'
 import {
   createBottomTabNavigator,
   createStackNavigator,
@@ -56,41 +56,45 @@ const MainNavigator = createStackNavigator(
   },
 )
 
+MainNavigator.navigationOptions = {
+  header: null,
+}
+
 const AppNavigator = createStackNavigator(
   {
     MainNavigator: { screen: MainNavigator },
     ...screens.app,
   },
   {
-    headerMode: 'none',
+    // headerMode: 'float',
     mode: 'modal',
     navigationOptions: {
       gesturesEnabled: false,
     },
-    // transitionConfig: () => ({
-    //   transitionSpec: {
-    //     duration: 300,
-    //     easing: Easing.out(Easing.poly(4)),
-    //     timing: Animated.timing,
-    //   },
-    //   screenInterpolator: sceneProps => {
-    //     const { layout, position, scene } = sceneProps
-    //     const { index } = scene
-    //
-    //     const height = layout.initHeight
-    //     const translateY = position.interpolate({
-    //       inputRange: [index - 1, index, index + 1],
-    //       outputRange: [height, 0, 0],
-    //     })
-    //
-    //     const opacity = position.interpolate({
-    //       inputRange: [index - 1, index - 0.99, index],
-    //       outputRange: [0, 1, 1],
-    //     })
-    //
-    //     return { opacity, transform: [{ translateY }] }
-    //   },
-    // }),
+    transitionConfig: () => ({
+      transitionSpec: {
+        duration: 300,
+        easing: Easing.out(Easing.poly(4)),
+        timing: Animated.timing,
+      },
+      screenInterpolator: sceneProps => {
+        const { layout, position, scene } = sceneProps
+        const { index } = scene
+
+        const height = layout.initHeight
+        const translateY = position.interpolate({
+          inputRange: [index - 1, index, index + 1],
+          outputRange: [height, 0, 0],
+        })
+
+        const opacity = position.interpolate({
+          inputRange: [index - 1, index - 0.99, index],
+          outputRange: [0, 1, 1],
+        })
+
+        return { opacity, transform: [{ translateY }] }
+      },
+    }),
   },
 )
 
@@ -120,7 +124,6 @@ function getActiveRouteName(navigationState)
 }
 
 // 终极路由
-@connect(({ app, router }) => ({ app, router }))
 class Router extends React.PureComponent<any, never>
 {
   componentWillMount()
@@ -159,5 +162,4 @@ class Router extends React.PureComponent<any, never>
 
 // Decorator will cost more performance, use higher-order function here instead
 // 装饰器会有更高的性能损耗，于是在这里直接使用高阶段函数
-// export default connect(({ app, router }) => ({ app, router }))(Router)
-export default Router
+export default connect(({ app, router }) => ({ app, router }))(Router)

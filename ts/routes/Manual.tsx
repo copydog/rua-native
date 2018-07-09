@@ -29,9 +29,17 @@ class Manual extends React.Component<any, any>
   {
     return (
       <View>
-        <List>
-          <ListItem arrow={'horizontal'} onClick={this.handleGoTo('SimplePageExample')}>
-            123
+        <List renderHeader={'Page Animation / 页面切换动画'}>
+          <ListItem
+            arrow={'horizontal'}
+            onClick={this.handleGoTo('SimplePageExample')}
+          >
+            Simple Page / 简单页面
+          </ListItem>
+          <ListItem
+            arrow={'horizontal'}
+            onClick={this.handleGoTo('SimpleModalPageExample')}>
+            Simple Modal Page / 简单弹窗页面
           </ListItem>
         </List>
       </View>
