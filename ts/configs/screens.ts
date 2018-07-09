@@ -11,7 +11,7 @@ export const home = {
 }
 
 export const main = {
-  SimplePageExample: { screen: 'SimplePageExample' }
+  SimplePageExample: { screen: SimplePageExample }
 }
 
 export const drawer = {}

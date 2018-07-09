@@ -2,6 +2,7 @@ import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
 import { actions, D } from 'rua'
 import { default as R } from '../../resources'
+import { Center } from '../../components/rua'
 
 class SimplePageExample extends React.Component<any, any>
 {
@@ -13,11 +14,14 @@ class SimplePageExample extends React.Component<any, any>
   render()
   {
     return (
-      <View>
+      <Center>
         <Text>
-          This is a simple page / 这是一个简单页面
+          This is a simple page
         </Text>
-      </View>
+        <Text>
+          这是一个简单页面
+        </Text>
+      </Center>
     )
   }
 }

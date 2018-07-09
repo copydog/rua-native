@@ -31,7 +31,7 @@ const HomeNavigator = createBottomTabNavigator(
         borderTopWidth: 1,
       },
     },
-    initialRouteName: 'Manual',
+    initialRouteName: 'Home',
   },
 )
 
