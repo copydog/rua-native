@@ -17,11 +17,9 @@ import { screens } from './configs'
 const HomeNavigator = createBottomTabNavigator(
   screens.home,
   {
-    // tabBarComponent: TabBarBottom,
-    // tabBarPosition: 'bottom',
     swipeEnabled: false,
     animationEnabled: false,
-    // lazyLoad: false,
+    // lazyLoad: true,
     tabBarOptions: {
       activeTintColor: R.color.primary,
       inactiveBackgroundColor: '#fff',
@@ -33,7 +31,7 @@ const HomeNavigator = createBottomTabNavigator(
         borderTopWidth: 1,
       },
     },
-    initialRouteName: 'Home',
+    initialRouteName: 'Manual',
   },
 )
 

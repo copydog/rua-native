@@ -1,5 +1,6 @@
 // ----- Imports / 导入 -----
 import { Home, Manual, Icons, Playground } from '../routes'
+import { SimplePageExample } from '../routes/example'
 
 // ----- Screens / 页面 -----
 export const home = {
@@ -9,7 +10,9 @@ export const home = {
   Playground: { screen: Playground },
 }
 
-export const main = {}
+export const main = {
+  SimplePageExample: { screen: 'SimplePageExample' }
+}
 
 export const drawer = {}
 

@@ -7,14 +7,16 @@ class SimplePageExample extends React.Component<any, any>
 {
   static navigationOptions = {
     ...R.style.header,
-    headerTitle: '',
+    headerTitle: 'Simple Page',
   }
 
   render()
   {
     return (
       <View>
-        This is a simple page / 这是一个简单页面
+        <Text>
+          This is a simple page / 这是一个简单页面
+        </Text>
       </View>
     )
   }
