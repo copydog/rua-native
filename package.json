@@ -24,7 +24,9 @@
     "react-native": "^0.55.4",
     "react-native-vector-icons": "^4.6.0",
     "react-native-web": "^0.8.6",
-    "react-navigation": "2.2.0",
+    "react-navigation": "^2.6.2",
+    "react-navigation-redux-helpers": "^2.0.2",
+    "react-redux": "^5.0.7",
     "rua": "^0.12.0",
     "rua-ui": "^0.8.0"
   },

@@ -1,43 +1,41 @@
+// Basic
 import * as React from 'react'
-import * as ReactDom from 'react-dom'
-import './rua-native/loader'
-import {
-  createBottomTabNavigator,
-  createStackNavigator,
-} from 'react-navigation'
+import { AppRegistry, YellowBox, Platform } from 'react-native'
+// Configs
+import ruaNativeModels from './rua-native/models'
+import models from './models'
+import Router, { routerMiddleware, routerReducer } from './router'
+// Rua.JS
+import { Rua } from 'rua'
 
-import { Home, Manual, Icons } from './routes'
-import { SimplePageExample } from './routes/example'
-import { Platform, AppRegistry } from 'react-native'
+// todo: move
+YellowBox.ignoreWarnings([
+  'Warning: isMounted(...) is deprecated',
+  'Module RCTJMessageModule requires main',
+  'Module RCTWeChat requires main',
+  'Module RCTImageLoader requires main',
+])
 
-const Main = createBottomTabNavigator({
-  Home: { screen: Home, path: '/' },
-  Manual: { screen: Manual, path: '/manual' },
-  Icon: { screen: Icons, path: '/icon' },
-})
+// 配置Rua
+const app = new Rua({
+  dva: {
+    initialState: {},
+    models: [...ruaNativeModels, ...models],
+    extraReducers: { router: routerReducer },
+    onAction: [routerMiddleware],
+    onError(e: any)
+    {
+      console.warn('onError', e)
+    },
+  },
+}).app
 
-Main.navigationOptions = ({ navigation }) =>
-{
-  const component = Main.router.getComponentForState(navigation.state)
-  if (typeof component.navigationOptions === 'function')
-  {
-    return component.navigationOptions({ navigation })
-  }
-  return component.navigationOptions
-}
-
-const App = createStackNavigator({
-  MainNavigator: { screen: Main },
-  SimplePageExample: { screen: SimplePageExample, path: '/manual/simplePage' },
-})
+// 启动
+const App = app.start(<Router />)
 
 AppRegistry.registerComponent('RuaNative', () => App)
 
 if ('web' === Platform.OS)
 {
-  ReactDom.render(
-    <App uriPrefix={'http://localhost:8000/'}/>,
-    document.getElementById('RuaNative'),
-  )
+  // todo: web registration
 }
-
