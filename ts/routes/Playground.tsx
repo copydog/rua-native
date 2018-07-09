@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import Repeat from '../components/Playground/Repeat'
+import { Repeat } from 'rua-ui'
 
 export default class Playground extends React.Component<any, any>
 {

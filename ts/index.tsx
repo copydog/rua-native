@@ -3,11 +3,12 @@ import * as ReactDom from 'react-dom'
 import './rua-native/loader'
 import {
   createBottomTabNavigator,
-  createStackNavigator
+  createStackNavigator,
 } from 'react-navigation'
 
 import { Home, Manual, Icons } from './routes'
-import { SimplePageExample } from './routes/Example'
+import { SimplePageExample } from './routes/example'
+import { Platform, AppRegistry } from 'react-native'
 
 const Main = createBottomTabNavigator({
   Home: { screen: Home, path: '/' },
@@ -27,10 +28,16 @@ Main.navigationOptions = ({ navigation }) =>
 
 const App = createStackNavigator({
   MainNavigator: { screen: Main },
-  SimplePageExample: { screen: SimplePageExample, path: '/manual/simplePage' }
+  SimplePageExample: { screen: SimplePageExample, path: '/manual/simplePage' },
 })
 
-ReactDom.render(
-  <App uriPrefix={'http://localhost:8000/'} />,
-  document.getElementById('RuaNative')
-)
+AppRegistry.registerComponent('RuaNative', () => App)
+
+if ('web' === Platform.OS)
+{
+  ReactDom.render(
+    <App uriPrefix={'http://localhost:8000/'}/>,
+    document.getElementById('RuaNative'),
+  )
+}
+

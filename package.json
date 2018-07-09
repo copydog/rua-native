@@ -13,7 +13,8 @@
     "web": "roadhog dev",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
-    "fix:web": "node ./scripts/fix/index"
+    "fix:web": "node ./scripts/fix/index",
+    "build": "tsc"
   },
   "dependencies": {
     "antd-mobile-rn": "^2.2.0",

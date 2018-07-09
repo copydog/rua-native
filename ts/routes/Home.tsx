@@ -2,6 +2,7 @@ import * as React from 'react'
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import { default as Icon } from 'react-native-vector-icons/MaterialCommunityIcons'
 import { default as R } from '../resources'
+import { Column, Row } from '../components/rua'
 
 class Home extends React.Component<any, any>
 {
@@ -13,9 +14,9 @@ class Home extends React.Component<any, any>
     {
       const { focused, tintColor } = nav
       return (
-        <Icon name={'react'} size={22} color={focused ? tintColor : '#333'} />
+        <Icon name={'react'} size={22} color={focused ? tintColor : '#333'}/>
       )
-    }
+    },
   }
 
   render()
@@ -23,16 +24,9 @@ class Home extends React.Component<any, any>
     return (
       <View style={styles.container}>
         <ScrollView style={{ flex: 1 }}>
-          <View style={{ flex: 1, backgroundColor: 'red' }}>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-            <Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text><Text>Home</Text>
-          </View>
+          <Row center style={{ width: '100%', backgroundColor: 'red' }}>
+            <Text>Hello</Text>
+          </Row>
         </ScrollView>
       </View>
     )
