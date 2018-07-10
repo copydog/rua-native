@@ -5,8 +5,11 @@ const babelGen = require('@babel/generator').default
 
 const folders = [
   'react-navigation-redux-helpers',
-  // 'react-navigation-tabs',
+  'react-native-modal',
+  'react-native-animatable',
+  'react-navigation-tabs',
   'react-navigation',
+  'react-native-touchable-scale',
   // 'react-native-invertible-scroll-view',
   // 'react-native-scrollable-mixin',
   // '@expo',

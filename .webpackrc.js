@@ -10,11 +10,20 @@ const theme = require('./web/theme')
 module.exports = {
   entry: 'src/index.js',
   // entry: 'ts/index.tsx',
-  define: {
-    __DEV__: process.env.NODE_DEV,
+  env: {
+    development: {
+      define: {
+        __DEV__: true,
+      },
+    },
+    production: {
+      define: {
+        __DEV__: false,
+      },
+    }
   },
   alias: {
-    'react-native$': 'react-native-web',
+    'react-native': 'react-native-web',
     'antd-mobile-rn': 'antd-mobile',
   },
   extraBabelPlugins: [
@@ -33,6 +42,7 @@ module.exports = {
     'node_modules/react-navigation-tabs',
     'node_modules/react-native-safe-area-view',
     'node_modules/react-native-vector-icons',
+    'node_modules/react-native-modal',
   ],
   publicPath: '/',
   theme,
