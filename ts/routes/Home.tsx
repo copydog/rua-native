@@ -24,7 +24,7 @@ class Home extends React.Component<any, any>
     return (
       <View style={styles.container}>
         <ScrollView style={{ flex: 1 }}>
-          <Row center style={{ width: '100%', backgroundColor: 'red' }}>
+          <Row center>
             <Text>Hello</Text>
           </Row>
         </ScrollView>

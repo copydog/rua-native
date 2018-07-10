@@ -27,20 +27,26 @@ class Manual extends React.Component<any, any>
 
   render()
   {
+    const goTo = this.handleGoTo
+
     return (
       <View>
-        <List renderHeader={'Page Animation / 页面切换动画'}>
-          <ListItem
-            arrow={'horizontal'}
-            onClick={this.handleGoTo('SimplePageExample')}
+        <List renderHeader={'Navigation / 路由'}>
+          <ListItem arrow={'horizontal'} onClick={goTo('SimplePageExample')}
           >
             Simple Page / 简单页面
           </ListItem>
-          <ListItem
-            arrow={'horizontal'}
-            onClick={this.handleGoTo('SimpleModalPageExample')}>
+          <ListItem arrow={'horizontal'} onClick={goTo('SimpleModalPageExample')}>
             Simple Modal Page / 简单弹窗页面
           </ListItem>
+        </List>
+        <List renderHeader={'Rua.js'}>
+          <ListItem arrow={'horizontal'} onClick={goTo('RuaJSExample')}>Rua.js</ListItem>
+          <ListItem arrow={'horizontal'} onClick={goTo('RuaUIExample')}>Rua UI</ListItem>
+        </List>
+        <List renderHeader={'Third-party libraries / 第三方库'}>
+          <ListItem arrow={'horizontal'} onClick={goTo('AntDesignMobileExample')}>Ant Design Mobile</ListItem>
+          <ListItem arrow={'horizontal'} onClick={goTo('ReactNativeModalExample')}>React Native Modal</ListItem>
         </List>
       </View>
     )

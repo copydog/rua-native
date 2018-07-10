@@ -1,3 +1,4 @@
+import './rua-native/loader'
 // Basic
 import * as React from 'react'
 import { AppRegistry, YellowBox, Platform } from 'react-native'
@@ -38,4 +39,7 @@ AppRegistry.registerComponent('RuaNative', () => App)
 if ('web' === Platform.OS)
 {
   // todo: web registration
+  AppRegistry.runApplication('RuaNative', {
+    rootTag: document.getElementById('RuaNative')
+  })
 }

@@ -1,6 +1,11 @@
 // ----- Imports / 导入 -----
 import { Home, Manual, Icons, Playground } from '../routes'
-import { SimplePageExample, SimpleModalPageExample } from '../routes/example'
+import {
+  SimplePageExample,
+  SimpleModalPageExample,
+  AntDesignMobileExample,
+  ReactNativeModalExample,
+} from '../routes/example'
 
 // ----- Screens / 页面 -----
 export const home = {
@@ -11,7 +16,9 @@ export const home = {
 }
 
 export const main = {
-  SimplePageExample: { screen: SimplePageExample }
+  SimplePageExample: { screen: SimplePageExample },
+  AntDesignMobileExample: { screen: AntDesignMobileExample },
+  ReactNativeModalExample: { screen: ReactNativeModalExample },
 }
 
 export const drawer = {}
