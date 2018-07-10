@@ -8,7 +8,8 @@ const theme = require('./web/theme')
 // RoadHog只管理网页,
 // 需使用'.babelrc'去配置React Native的代码转换
 module.exports = {
-  entry: 'ts/index.tsx',
+  entry: 'src/index.js',
+  // entry: 'ts/index.tsx',
   define: {
     __DEV__: process.env.NODE_DEV,
   },
@@ -19,7 +20,7 @@ module.exports = {
   extraBabelPlugins: [
     '@babel/transform-flow-strip-types',
     'react-native-web',
-    ['import', { 'libraryName': 'antd-mobile', 'style': true }],
+    // ['import', { 'libraryName': 'antd-mobile', 'style': true }],
   ],
   extraBabelPresets: [
     '@babel/preset-env',

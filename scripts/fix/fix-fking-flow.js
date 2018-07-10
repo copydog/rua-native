@@ -4,7 +4,7 @@ const klawSync = require('klaw-sync')
 const babelGen = require('@babel/generator').default
 
 const folders = [
-  // 'react-navigation-redux-helpers',
+  'react-navigation-redux-helpers',
   // 'react-navigation-tabs',
   'react-navigation',
   // 'react-native-invertible-scroll-view',
