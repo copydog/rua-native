@@ -35,7 +35,7 @@ const HomeNavigator = createBottomTabNavigator(
   },
 )
 
-// BottomTabNavigator walkarround
+// BottomTabNavigator walk around
 // 临时修复BottomTabNavigator
 HomeNavigator.navigationOptions = ({ navigation }) =>
 {

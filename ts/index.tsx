@@ -38,7 +38,6 @@ AppRegistry.registerComponent('RuaNative', () => App)
 
 if ('web' === Platform.OS)
 {
-  // todo: web registration
   AppRegistry.runApplication('RuaNative', {
     rootTag: document.getElementById('RuaNative')
   })
