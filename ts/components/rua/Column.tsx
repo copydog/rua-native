@@ -20,51 +20,22 @@ export default class Column extends React.PureComponent<ColumnProps, any>
     } = this.props
     const viewStyle: ViewStyle = style || {}
 
-    if (left)
-    {
-      viewStyle.alignItems = 'flex-start'
-    }
+    // horizontal
+    if (left) viewStyle.alignItems = 'flex-start'
+    if (center) viewStyle.alignItems = 'center'
+    if (right) viewStyle.alignItems = 'flex-end'
 
-    if (center)
-    {
-      viewStyle.alignItems = 'center'
-    }
+    // vertical
+    if (top) viewStyle.justifyContent = 'flex-start'
+    if (middle) viewStyle.justifyContent = 'center'
+    if (bottom) viewStyle.justifyContent = 'flex-end'
 
-    if (right)
-    {
-      viewStyle.alignItems = 'flex-end'
-    }
-
-    if (top)
-    {
-      viewStyle.justifyContent = 'flex-start'
-    }
-
-    if (middle)
-    {
-      viewStyle.justifyContent = 'center'
-    }
-
-    if (bottom)
-    {
-      viewStyle.justifyContent = 'flex-end'
-    }
-
-    if (between)
-    {
-      viewStyle.justifyContent = 'space-between'
-    }
-
-    if (around)
-    {
-      viewStyle.justifyContent = 'space-around'
-    }
+    // main axis
+    if (between) viewStyle.justifyContent = 'space-between'
+    if (around) viewStyle.justifyContent = 'space-around'
 
     return (
-      <View
-        style={viewStyle}
-        {...restProps}
-      >
+      <View style={viewStyle}{...restProps}>
         {children}
       </View>
     )

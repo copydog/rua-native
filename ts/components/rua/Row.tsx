@@ -23,45 +23,19 @@ export default class Row extends React.PureComponent<RowProps, never>
 
     viewStyle.flexDirection = 'row'
 
-    if (left)
-    {
-      viewStyle.justifyContent = 'flex-start'
-    }
+    // horizontal
+    if (left) viewStyle.justifyContent = 'flex-start'
+    if (center) viewStyle.justifyContent = 'center'
+    if (right) viewStyle.justifyContent = 'flex-end'
 
-    if (center)
-    {
-      viewStyle.justifyContent = 'center'
-    }
+    // vertical
+    if (top) viewStyle.alignItems = 'flex-start'
+    if (middle) viewStyle.alignItems = 'center'
+    if (bottom) viewStyle.alignItems = 'flex-end'
 
-    if (right)
-    {
-      viewStyle.justifyContent = 'flex-end'
-    }
-
-    if (top)
-    {
-      viewStyle.alignItems = 'flex-start'
-    }
-
-    if (middle)
-    {
-      viewStyle.alignItems = 'center'
-    }
-
-    if (bottom)
-    {
-      viewStyle.alignItems = 'flex-end'
-    }
-
-    if (between)
-    {
-      viewStyle.justifyContent = 'space-between'
-    }
-
-    if (around)
-    {
-      viewStyle.justifyContent = 'space-around'
-    }
+    // main axis
+    if (between) viewStyle.justifyContent = 'space-between'
+    if (around) viewStyle.justifyContent = 'space-around'
 
     return (
       <View style={viewStyle} {...restProps}>

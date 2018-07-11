@@ -43,6 +43,7 @@ module.exports = {
     'node_modules/react-native-safe-area-view',
     'node_modules/react-native-vector-icons',
     'node_modules/react-native-modal',
+    'node_modules/react-native-action-button',
   ],
   publicPath: '/',
   theme,

@@ -47,6 +47,7 @@ class Manual extends React.Component<any, any>
         <List renderHeader={'Third-party libraries / 第三方库'}>
           <ListItem arrow={'horizontal'} onClick={goTo('AntDesignMobileExample')}>Ant Design Mobile</ListItem>
           <ListItem arrow={'horizontal'} onClick={goTo('ReactNativeModalExample')}>React Native Modal</ListItem>
+          <ListItem arrow={'horizontal'} onClick={goTo('ReactNativeActionButtonExample')}>React Native Action Button</ListItem>
         </List>
       </View>
     )

@@ -5,6 +5,7 @@ const babelGen = require('@babel/generator').default
 
 const folders = [
   'react-navigation-redux-helpers',
+  'react-navigation-redux-helpers',
   'react-native-modal',
   'react-native-animatable',
   'react-navigation-tabs',
@@ -43,11 +44,11 @@ for (const folder of folders) {
       const parsed = require("babel-core").transform(file, {
         presets: ['es2015', 'stage-2'],
         plugins: [
+          'transform-runtime',
           'transform-react-jsx',
           "transform-flow-strip-types",
-          'transform-runtime',
-        ]
-      })
+        ],
+      });
 
       const newCode = babelGen(parsed.ast, {}, '').code
 
