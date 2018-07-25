@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { StyleSheet, View, Image, Button, Text } from 'react-native'
 import { actions, D } from 'rua'
-import { default as R } from '../../resources'
+import * as R from '../../resources/index'
 import { Center } from '../../components/rua'
 
 class SimplePageExample extends React.Component<any, any>

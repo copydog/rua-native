@@ -2,7 +2,7 @@ import { List, Tabs } from 'antd-mobile-rn'
 import * as React from 'react'
 import { FlatList, ScrollView, StyleSheet } from 'react-native'
 import { Icon as RIcon, Space, Text, View, } from 'rua-ui'
-import { default as R } from '../resources'
+import * as R from '../resources/index'
 import { MaterialCommunityIcons } from '../rua-native/icon-list'
 
 const { Item: ListItem } = List

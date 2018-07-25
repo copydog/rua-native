@@ -9,7 +9,7 @@ const theme = require('./web/theme')
 // 需使用'.babelrc'去配置React Native的代码转换
 module.exports = {
   entry: 'src/index.js',
-  // entry: 'ts/index.tsx',
+  // entry: 'ts/index.ts',
   env: {
     development: {
       define: {

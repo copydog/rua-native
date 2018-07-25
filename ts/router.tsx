@@ -11,8 +11,10 @@ import {
   createNavigationReducer,
 } from 'react-navigation-redux-helpers'
 import { connect } from 'rua'
-import * as R from './resources'
+import * as R from './resources/index'
 import { screens } from './configs'
+import { default as StyleInterpolator } from
+    'react-navigation/src/views/StackView/StackViewStyleInterpolator'
 
 const HomeNavigator = createBottomTabNavigator(
   screens.home,
@@ -53,6 +55,11 @@ const MainNavigator = createStackNavigator(
   },
   {
     headerMode: 'float',
+    // this value fix the problem title centering problem in android
+    headerLayoutPreset: 'center',
+    transitionConfig: () => ({
+      screenInterpolator: StyleInterpolator.forHorizontal,
+    }),
   },
 )
 

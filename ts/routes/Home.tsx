@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import { default as Icon } from 'react-native-vector-icons/MaterialCommunityIcons'
-import { default as R } from '../resources'
+import * as R from '../resources/index'
 import { Column, Row } from '../components/rua'
 
 class Home extends React.Component<any, any>

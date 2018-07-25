@@ -6,6 +6,7 @@ import {
   AntDesignMobileExample,
   ReactNativeModalExample,
   ReactNativeActionButtonExample,
+  ReactNativeRootToastExample,
 } from '../routes/example'
 
 // ----- Screens / 页面 -----
@@ -21,6 +22,7 @@ export const main = {
   AntDesignMobileExample: { screen: AntDesignMobileExample },
   ReactNativeModalExample: { screen: ReactNativeModalExample },
   ReactNativeActionButtonExample: { screen: ReactNativeActionButtonExample },
+  ReactNativeRootToastExample: { screen: ReactNativeRootToastExample },
 }
 
 export const drawer = {}
